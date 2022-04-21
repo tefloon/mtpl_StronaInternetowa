@@ -54,14 +54,6 @@ img.baner{
 	border-radius: 0px 0px 15px 15px;
 }
 
-.footer:hover{
-	background-color: #e7eb11;
-	/* -webkit-transition: background-color 300ms ease-in;
-    -ms-transition: background-color 300ms ease-in; */
-    transition: background-color 300ms ease-in;
-}
-
-
 /* #region        === MAIN MENU ===        */
 
 	.mainMenu ul{
@@ -78,19 +70,39 @@ img.baner{
 		background-color: #e7eb11;
 
 	}
-
+	
 	.mainMenu li a{
 		display: grid;
 	    place-content: center;
 		height: 100%;
 		font-weight: 800;
-		color: #000;
+		color: #333;
 		text-transform: uppercase;
+		-ms-transition: background-color 300ms ease-out;
+		-webkit-transition: background-color 300ms ease-out;
+		transition: background-color 300ms ease-out;
+	}
+	.mainMenu li a span{
+		display: inline;
+		vertical-align: middle;
+		pointer-events:none;
 	}
 
 	.mainMenu li a:hover{
-		background-color: #eba611;
-		/* color: #fff; */
+		/*background-color: #eba611;*/
+		background-color: #404040;
+		color: #ddd;
+		-webkit-transition: background-color 100ms linear;
+		-ms-transition: background-color 100ms linear;
+		transition: background-color 100ms linear;
+	}
+	
+	.mainMenu a:hover span::before,
+	.mainMenu a:hover span::after,
+	.mainMenu a.active span::before,
+	.mainMenu a.active span::after
+	{
+		content: " 🦄 ";
 	}
 
 	.mainMenu li a.active{
@@ -103,20 +115,5 @@ img.baner{
 		color: #fff;
 	}
 
-	.mainMenu ul li:first-child,
-	.mainMenu ul li:first-child a
-	{
-		background-color: #2242c2;
-		font-weight: 800;
-		color: #ffffff;
-	}
-
-	.mainMenu ul li:first-child:hover,
-	.mainMenu ul li:first-child a:hover
-	{
-		background-color: #ec5418;
-		font-weight: 1200;
-		color: #ffffff;
-	}
 
 /* #endregion */
